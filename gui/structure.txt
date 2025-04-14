@@ -1,0 +1,35 @@
+gui/
+├── __init__.py
+├── main_window.py           # Giao diện chính chứa tab điều hướng
+├── ai_chat_tab.py           # Tab giao tiếp AI
+├── listening_tab.py         # Tab luyện nghe
+├── speaking_tab.py          # Tab luyện nói (theo chủ đề)
+├── vocabulary_tab.py        # Tab học từ vựng + quiz
+├── components/              # Các widget nhỏ: text box, card, button
+│   ├── __init__.py
+│   ├── text_display.py      # Hiển thị văn bản, câu trả lời từ AI
+│   └── quiz_card.py         # Hiển thị câu hỏi trắc nghiệm
+└── resources/               # Icon, stylesheet nếu có
+    └── style.qss            # Style cho giao diện
+
+
+AI/
+|--- core/
+	|---ai_conversation.py
+	|---speech_assessment.py
+	|--- summarizer.py
+	|---topic_generator.py
+	|---vocabulary_quiz.py
+	|--- vocabulary_scraper.py
+	|---voice_utils.py
+|--- gui/
+	|---components/
+		|--- quiz_card.py
+		|--- text_display.py
+	|resources/
+		|--- ai_chat_tab.py
+		|--- listening_tab.py
+		|--- main_window.py
+		|--- speaking_tab.py
+		|--- vocabulary_tab.py
+|--- main.py

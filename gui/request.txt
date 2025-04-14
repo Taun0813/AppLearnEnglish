@@ -1,0 +1,7 @@
+Request: 
+{
+  "word": "apple",
+  "definition_vi": "quả táo",
+  "image_url": "https://.../apple.jpg",
+  "word_url": "https://www.oxfordlearnersdictionaries.com/definition/english/apple"
+}

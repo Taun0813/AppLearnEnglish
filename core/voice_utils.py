@@ -23,3 +23,11 @@ class VoiceUtils:
     def speak(self, text):
         self.speaker.say(text)
         self.speaker.runAndWait()
+
+def text_to_speech(text):
+    try:
+        speaker = pyttsx3.init()
+        speaker.say(text)
+        speaker.runAndWait()
+    except Exception as e:
+        print(f"Error during text-to-speech: {e}")

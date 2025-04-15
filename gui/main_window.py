@@ -9,6 +9,7 @@ from gui.tabs.listening_tab import ListeningTab
 from gui.tabs.speaking_tab import SpeakingTab
 from gui.tabs.vocabulary_tab import VocabularyTab
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -67,8 +68,8 @@ class MainWindow(QMainWindow):
             }
         """)
 
-        self.font = QFont("Segoe UI", 12)
-        self.setFont(self.font)
+        self.main_font = QFont("Segoe UI", 12)
+        self.set_app_font(self.main_font)
 
         self.central_widget = QWidget()
         self.stacked_layout = QStackedLayout()
@@ -83,6 +84,9 @@ class MainWindow(QMainWindow):
 
         self.central_widget.setLayout(self.stacked_layout)
         self.setCentralWidget(self.central_widget)
+
+    def set_app_font(self, font):
+        self.setFont(font)
 
     def create_tab_screen(self):
         self.tabs = QTabWidget()

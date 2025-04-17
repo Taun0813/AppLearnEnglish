@@ -1,9 +1,11 @@
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import requests
-import json
 import os
+import json
 import pyttsx3
+import subprocess
+
 
 
 # Hàm lưu dữ liệu theo định dạng JSON
@@ -93,7 +95,8 @@ def get_all_conversation_links(base_url):
 
 def generate_audio_from_text(data_file, output_dir):
     """
-    Generates audio files from text using pyttsx3.
+    Generates .wav audio files from text using pyttsx3 and ffmpeg.
+    Also updates JSON with the relative path of generated audio files.
 
     Args:
         data_file: Path to the JSON file containing the text data.
@@ -105,53 +108,125 @@ def generate_audio_from_text(data_file, output_dir):
         with open(data_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
     except FileNotFoundError:
-        print(f"Error: Data file not found at {data_file}")
+        print(f"❌ Error: Data file not found at {data_file}")
         return
     except json.JSONDecodeError:
-        print(f"Error: Invalid JSON format in {data_file}")
+        print(f"❌ Error: Invalid JSON format in {data_file}")
         return
 
     engine = pyttsx3.init()
-
-    # Gốc thư mục cha để chuẩn hóa relative path
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
     for conversation_url, conversation_data in data.items():
         challenges = conversation_data.get("Challenges", {})
-
-        # Lấy tên Conversation (VD: Conversation1 từ https://.../Conversation1.1481/listen-and-type)
-        conversation_name = conversation_url
+        conversation_name = conversation_url.replace('/', '').replace(':', '')
 
         for challenge_id, challenge_data in challenges.items():
             spoken_text = challenge_data.get('spoken_text', '').strip()
             if not spoken_text:
-                continue  # Bỏ qua nếu không có text
+                continue
 
-            # Đổi "Challenge #1" → "Challenge-1"
             clean_challenge = challenge_id.replace('#', '').replace(' ', '-')
+            output_filename_mp3 = f"{conversation_name}-{clean_challenge}.mp3"
+            output_path_mp3 = os.path.join(output_dir, output_filename_mp3)
 
-            # Tạo tên file: Conversation1-Challenge-1.mp3
-            output_filename = f"{conversation_name}-{clean_challenge}.mp3"
-            output_path = os.path.join(output_dir, output_filename)
+            output_filename_wav = output_filename_mp3.replace(".mp3", ".wav")
+            output_path_wav = os.path.join(output_dir, output_filename_wav)
 
-            if not os.path.exists(output_path):
+            if not os.path.exists(output_path_wav):
                 try:
-                    engine.save_to_file(spoken_text, output_path)
+                    # Step 1: Generate MP3
+                    engine.save_to_file(spoken_text, output_path_mp3)
                     engine.runAndWait()
-                    print(f"Audio saved to: {output_path}")
+
+                    # Step 2: Convert MP3 to WAV
+                    subprocess.run([
+                        "ffmpeg", "-y", "-i", output_path_mp3, output_path_wav
+                    ], check=True)
+                    print(f"🎧 Converted to WAV: {output_path_wav}")
+
+                    # Step 3: Delete MP3
+                    os.remove(output_path_mp3)
+                    print(f"🗑️ Deleted MP3: {output_path_mp3}")
+
                 except Exception as e:
-                    print(f"Error generating audio for {challenge_id}: {e}")
+                    print(f"❌ Error processing {challenge_id}: {e}")
                     continue
             else:
-                print(f"Audio file already exists: {output_path}")
+                print(f"✅ WAV already exists: {output_path_wav}")
 
-            # Cập nhật lại đường dẫn tương đối cho JSON
-            relative_path = os.path.relpath(output_path, start=base_dir).replace("\\", "/")
+            # Step 4: Update JSON with relative WAV path
+            relative_path = os.path.relpath(output_path_wav, start=base_dir).replace("\\", "/")
             challenge_data["audio_path"] = relative_path
 
-    # Lưu lại file JSON với các audio_path đã cập nhật
+    # Step 5: Save updated JSON
     with open(data_file, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
+        print(f"💾 Updated JSON saved to {data_file}")
+
+# def generate_audio_from_text(data_file, output_dir):
+#     """
+#     Generates audio files from text using pyttsx3, converts to .wav using pydub, and deletes original .mp3.
+#     """
+#     os.makedirs(output_dir, exist_ok=True)
+#
+#     try:
+#         with open(data_file, 'r', encoding='utf-8') as f:
+#             data = json.load(f)
+#     except FileNotFoundError:
+#         print(f"Error: Data file not found at {data_file}")
+#         return
+#     except json.JSONDecodeError:
+#         print(f"Error: Invalid JSON format in {data_file}")
+#         return
+#
+#     engine = pyttsx3.init()
+#
+#     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+#
+#     for conversation_url, conversation_data in data.items():
+#         challenges = conversation_data.get("Challenges", {})
+#         conversation_name = conversation_url
+#
+#         for challenge_id, challenge_data in challenges.items():
+#             spoken_text = challenge_data.get('spoken_text', '').strip()
+#             if not spoken_text:
+#                 continue
+#
+#             clean_challenge = challenge_id.replace('#', '').replace(' ', '-')
+#
+#             mp3_filename = f"{conversation_name}-{clean_challenge}.mp3"
+#             wav_filename = f"{conversation_name}-{clean_challenge}.wav"
+#
+#             mp3_path = os.path.join(output_dir, mp3_filename)
+#             wav_path = os.path.join(output_dir, wav_filename)
+#
+#             if not os.path.exists(wav_path):
+#                 try:
+#                     engine.save_to_file(spoken_text, mp3_path)
+#                     engine.runAndWait()
+#                     print(f"[TTS] Audio saved: {mp3_path}")
+#
+#                     # Convert mp3 to wav
+#                     audio = AudioSegment.from_file(mp3_path, format="mp3")
+#                     audio.export(wav_path, format="wav")
+#                     print(f"[Convert] Converted to WAV: {wav_path}")
+#
+#                     # Remove mp3 file
+#                     os.remove(mp3_path)
+#                     print(f"[Clean] Removed MP3: {mp3_path}")
+#                 except Exception as e:
+#                     print(f"Error generating audio for {challenge_id}: {e}")
+#                     continue
+#             else:
+#                 print(f"[Skip] WAV already exists: {wav_path}")
+#
+#             # Cập nhật đường dẫn tương đối
+#             relative_path = os.path.relpath(wav_path, start=base_dir).replace("\\", "/")
+#             challenge_data["audio_path"] = relative_path
+#
+#     with open(data_file, 'w', encoding='utf-8') as f:
+#         json.dump(data, f, indent=4, ensure_ascii=False)
 
 
 def main():
@@ -182,6 +257,7 @@ def main():
 
     # Tạo âm thanh từ văn bản và cập nhật đường dẫn vào listen.json
     generate_audio_from_text('../data/listen.json', '../data/tts')
+
 
 
 if __name__ == "__main__":

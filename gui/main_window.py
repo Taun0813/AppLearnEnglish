@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QWidget, QStackedLayout, QVBoxLayout, QPushButton, QTabWidget
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
-
+from PyQt5.QtMultimedia import QMediaPlayer
 from gui.welcome_screen import WelcomeScreen
 from gui.menu_screen import MenuScreen
 from gui.tabs.ai_chat_tab import AIChatTab
@@ -70,6 +70,7 @@ class MainWindow(QMainWindow):
 
         self.main_font = QFont("Segoe UI", 12)
         self.set_app_font(self.main_font)
+        self.player = QMediaPlayer()
 
         self.central_widget = QWidget()
         self.stacked_layout = QStackedLayout()

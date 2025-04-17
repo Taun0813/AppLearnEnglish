@@ -1,18 +1,18 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QSizePolicy, QComboBox, QLineEdit, QTextEdit, \
-    QHBoxLayout, QSlider, QListWidget, QListWidgetItem
-from PyQt5.QtCore import Qt, QUrl, QDir
-from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
-
-import json
+    QHBoxLayout, QSlider, QListWidget
+from PyQt5.QtCore import Qt, QUrl
+from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent, QMediaPlaylist
 import os
+import re
+import json
 
 
 class ListeningTab(QWidget):
     def __init__(self):
         super().__init__()
-
+        self.setStyleSheet("font-size: 16px;")
         self.exercises = self.load_exercises()
-        self.current_exercise = None
+        self.current_exercise = ""
         self.current_challenge_data = None
 
         main_layout = QVBoxLayout()
@@ -22,15 +22,18 @@ class ListeningTab(QWidget):
         title = QLabel("🎧 Luyện Nghe")
         title.setAlignment(Qt.AlignCenter)
         title.setStyleSheet("font-size: 24px; font-weight: bold;")
+        title.setObjectName("title")
         main_layout.addWidget(title)
 
         # Exercise Selection
         self.exercise_dropdown = QComboBox()
         self.exercise_dropdown.currentIndexChanged.connect(self.update_challenge_list)
+        self.exercise_dropdown.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         main_layout.addWidget(self.exercise_dropdown)
 
         self.challenge_list = QListWidget()
         self.challenge_list.itemClicked.connect(self.challenge_selected)
+        self.challenge_list.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         main_layout.addWidget(self.challenge_list)
 
         for link in self.exercises.keys():
@@ -40,37 +43,39 @@ class ListeningTab(QWidget):
 
         # Speed Slider
         speed_layout = QHBoxLayout()
-        speed_label = QLabel("Audio Speed:")
+        self.speed_label = QLabel("Audio Speed:")
+        self.speed_label.setStyleSheet("padding: 5px;")
         self.speed_slider = QSlider(Qt.Horizontal)
-        self.speed_slider.setMinimum(50)  # 50%
-        self.speed_slider.setMaximum(150)  # 150%
-        self.speed_slider.setValue(100)  # Default 100%
+        self.speed_slider.setMinimum(50)
+        self.speed_slider.setMaximum(150)
+        self.speed_slider.setValue(100)
         self.speed_slider.setTickInterval(10)
         self.speed_slider.setTickPosition(QSlider.TicksBelow)
-        speed_layout.addWidget(speed_label)
+        speed_layout.addWidget(self.speed_label)
         speed_layout.addWidget(self.speed_slider)
         main_layout.addLayout(speed_layout)
 
         # Start Button
         self.start_button = QPushButton("Start Listening")
         self.start_button.clicked.connect(self.play_audio)
-        button_layout = QHBoxLayout()
-        button_layout.addWidget(self.start_button)
-        main_layout.addLayout(button_layout)
+        main_layout.addWidget(self.start_button)
 
         # Input and Result Layout
         input_result_layout = QVBoxLayout()
         self.user_input = QLineEdit()
         self.user_input.setPlaceholderText("Type what you hear here")
+        self.user_input.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         input_result_layout.addWidget(self.user_input)
 
         self.submit_button = QPushButton("Submit Answer")
         self.submit_button.clicked.connect(self.check_answer)
+        self.submit_button.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         input_result_layout.addWidget(self.submit_button)
 
         self.listening_result = QTextEdit()
         self.listening_result.setReadOnly(True)
         self.listening_result.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.listening_result.setStyleSheet("background-color: #f0f0f0;")
         input_result_layout.addWidget(self.listening_result)
 
         self.translation_label = QLabel("")
@@ -83,7 +88,7 @@ class ListeningTab(QWidget):
 
         # Audio Player
         self.player = QMediaPlayer()
-        self.player.setVolume(50)  # Default volume
+        self.player.setVolume(50)
         self.player.stateChanged.connect(self.audio_state_changed)
 
     def load_exercises(self):
@@ -136,49 +141,38 @@ class ListeningTab(QWidget):
             self.start_button.setEnabled(True)
 
     def play_audio(self):
-        print("play_audio function called.")
         self.start_button.setEnabled(False)
-        self.listening_result.setText("")  # Clear the result text field
-        self.translation_label.setText("")  # Clear the translation label
+        self.listening_result.clear()
+        self.translation_label.clear()
 
         if not self.current_challenge_data:
-            print("Error: No challenge data available.")
             self.listening_result.setText("Please select a challenge first.")
             return
-
-        print(f"Current challenge data: {self.current_challenge_data}")
         audio_path = self.current_challenge_data.get('audio_path')
         if audio_path is None:
-            print("Error: Audio path is None.")
             self.listening_result.setText("Audio path not found for this challenge.")
             return
 
         absolute_audio_path = os.path.abspath(audio_path)
-
-        print(f"[DEBUG] Absolute audio path: {absolute_audio_path}")
-
         if not os.path.exists(absolute_audio_path):
-            print(f"Error: Audio file not found: {absolute_audio_path}")
             self.listening_result.setText(f"Audio file not found: {audio_path}")
             self.start_button.setEnabled(True)
             return
-
         try:
             media = QMediaContent(QUrl.fromLocalFile(absolute_audio_path))
-            if not media.isNull():  # isValid is not available in PyQt5
-                self.player.setMedia(media)
-                self.player.play()
-                print("Audio is playing.")
-            else:
-                print(f"Error: Media is not valid: {absolute_audio_path}")
-                self.listening_result.setText(f"Media is not valid or corrupted: {audio_path}")
-                self.start_button.setEnabled(True)
+            self.player.setMedia(media)
+            self.player.setVolume(100)
+            self.player.play()
+
         except Exception as e:
-            import traceback
-            print(f"An error occurred: {e}")
-            traceback.print_exc()
             self.listening_result.setText("Error playing audio.")
             self.start_button.setEnabled(True)
+
+    def normalize_text(self, text):
+        text = text.lower()
+        text = re.sub(r'[^\w\s]', '', text)
+        text = ' '.join(text.split())
+        return text
 
     def check_answer(self):
         user_answer = self.user_input.text().strip()
@@ -188,19 +182,19 @@ class ListeningTab(QWidget):
 
         correct_answer = self.current_challenge_data['spoken_text']
 
-        if user_answer.lower() == correct_answer.lower():
-            self.listening_result.setText(f"Correct! The sentence is:\n{correct_answer}")
-
+        if self.normalize_text(user_answer) == self.normalize_text(correct_answer):
+            self.listening_result.setText(f"✅ Correct! The sentence is:\n{correct_answer}")
         else:
-            self.listening_result.setText("Incorrect. Checking words...")
+            self.listening_result.setText("❌ Incorrect. Checking words...")
             words_correct = []
-            user_words = user_answer.lower().split()
-            correct_words = correct_answer.lower().split()
+            user_words = self.normalize_text(user_answer).split()
+            correct_words = self.normalize_text(correct_answer).split()
+
             for i in range(min(len(user_words), len(correct_words))):
                 if user_words[i] == correct_words[i]:
                     words_correct.append(correct_words[i])
                 else:
                     self.listening_result.append(
-                        f"Word '{user_words[i]}' is incorrect. Correct word: '{correct_words[i]}'")
-
+                        f"❌ Word '{user_words[i]}' is incorrect. ✅ Correct word: '{correct_words[i]}'"
+                    )
 

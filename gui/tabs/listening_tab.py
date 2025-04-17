@@ -10,6 +10,7 @@ import os
 class ListeningTab(QWidget):
     def __init__(self):
         super().__init__()
+
         self.exercises = self.load_exercises()
         self.current_exercise = None
         self.current_challenge_data = None
@@ -91,21 +92,19 @@ class ListeningTab(QWidget):
         file_path = "data/listen.json"
         if os.path.exists(file_path):
             try:
-                with open(file_path, 'r') as f:
+                with open(file_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
-                    for conversation_url, challenges in data.items():
-                        exercises_data[conversation_url] = challenges
-                        for challenge_id, challenge_data in challenges.items():
-                            if 'audio_path' in challenge_data:
-                                # Cập nhật đường dẫn âm thanh từ 'audio_path' trong JSON
-                                audio_path = challenge_data['audio_path']
-                                # Kiểm tra nếu file âm thanh tồn tại
-                                full_audio_path = os.path.join('data', 'tts', audio_path)  # Đảm bảo đường dẫn chính xác
-                                if not os.path.exists(full_audio_path):
-                                    print(f"Warning: audio file not found: {full_audio_path}")
-                            else:
-                                print(
-                                    f"Warning: audio_path not found in challenge {challenge_id} of {conversation_url}")
+                    for conversation_url, content in data.items():
+                        if 'Challenges' in content:
+                            exercises_data[conversation_url] = content['Challenges']
+                            for challenge_id, challenge_data in content['Challenges'].items():
+                                if 'audio_path' in challenge_data:
+                                    full_audio_path = os.path.abspath(challenge_data['audio_path'])
+                                    if not os.path.exists(full_audio_path):
+                                        print(f"Warning: audio file not found: {full_audio_path}")
+                                else:
+                                    print(
+                                        f"Warning: audio_path not found in challenge {challenge_id} of {conversation_url}")
             except json.JSONDecodeError:
                 print("Error decoding JSON data from file")
         else:
@@ -113,14 +112,12 @@ class ListeningTab(QWidget):
         return exercises_data
 
     def update_challenge_list(self):
-        """Updates the challenge list based on the selected exercise."""
+        """Updates the list of challenges when a new exercise is selected."""
         self.challenge_list.clear()
         selected_exercise = self.exercise_dropdown.currentText()
         if selected_exercise in self.exercises:
-            challenges = self.exercises[selected_exercise]
-            for challenge_id in challenges.keys():
-                item = QListWidgetItem(challenge_id)
-                self.challenge_list.addItem(item)
+            for challenge_id in self.exercises[selected_exercise]:
+                self.challenge_list.addItem(challenge_id)
 
     def challenge_selected(self, item):
         """Handles the selection of a challenge from the list."""
@@ -139,34 +136,47 @@ class ListeningTab(QWidget):
             self.start_button.setEnabled(True)
 
     def play_audio(self):
+        print("play_audio function called.")
         self.start_button.setEnabled(False)
-        self.listening_result.setText("")
-        self.translation_label.setText("")
+        self.listening_result.setText("")  # Clear the result text field
+        self.translation_label.setText("")  # Clear the translation label
 
-        # Kiểm tra xem đã chọn challenge chưa
         if not self.current_challenge_data:
+            print("Error: No challenge data available.")
             self.listening_result.setText("Please select a challenge first.")
             return
 
-        # Lấy audio_path từ dữ liệu challenge hiện tại
+        print(f"Current challenge data: {self.current_challenge_data}")
         audio_path = self.current_challenge_data.get('audio_path')
-
         if audio_path is None:
-            self.listening_result.setText("Audio file not found for this challenge.")
+            print("Error: Audio path is None.")
+            self.listening_result.setText("Audio path not found for this challenge.")
             return
 
-        # Chuyển đổi đường dẫn từ file JSON thành đường dẫn tuyệt đối
-        audio_path = QDir.current().absoluteFilePath(os.path.join('data', 'tts', audio_path))  # Chỉnh sửa đường dẫn
+        absolute_audio_path = os.path.abspath(audio_path)
+
+        print(f"[DEBUG] Absolute audio path: {absolute_audio_path}")
+
+        if not os.path.exists(absolute_audio_path):
+            print(f"Error: Audio file not found: {absolute_audio_path}")
+            self.listening_result.setText(f"Audio file not found: {audio_path}")
+            self.start_button.setEnabled(True)
+            return
 
         try:
-            # Kiểm tra và khởi tạo QMediaContent
-            media = QMediaContent(QUrl.fromLocalFile(audio_path))
-
-            # Set media và bắt đầu phát âm thanh
-            self.player.setMedia(media)
-            self.player.play()
+            media = QMediaContent(QUrl.fromLocalFile(absolute_audio_path))
+            if not media.isNull():  # isValid is not available in PyQt5
+                self.player.setMedia(media)
+                self.player.play()
+                print("Audio is playing.")
+            else:
+                print(f"Error: Media is not valid: {absolute_audio_path}")
+                self.listening_result.setText(f"Media is not valid or corrupted: {audio_path}")
+                self.start_button.setEnabled(True)
         except Exception as e:
-            print(f"Error playing audio: {e}")
+            import traceback
+            print(f"An error occurred: {e}")
+            traceback.print_exc()
             self.listening_result.setText("Error playing audio.")
             self.start_button.setEnabled(True)
 
@@ -192,3 +202,5 @@ class ListeningTab(QWidget):
                 else:
                     self.listening_result.append(
                         f"Word '{user_words[i]}' is incorrect. Correct word: '{correct_words[i]}'")
+
+

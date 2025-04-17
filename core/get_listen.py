@@ -102,7 +102,7 @@ def generate_audio_from_text(data_file, output_dir):
     os.makedirs(output_dir, exist_ok=True)
 
     try:
-        with open(data_file, 'r') as f:
+        with open(data_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
     except FileNotFoundError:
         print(f"Error: Data file not found at {data_file}")
@@ -113,32 +113,47 @@ def generate_audio_from_text(data_file, output_dir):
 
     engine = pyttsx3.init()
 
+    # Gốc thư mục cha để chuẩn hóa relative path
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
     for conversation_url, conversation_data in data.items():
-        audio_url = conversation_data.get("audio_url")
         challenges = conversation_data.get("Challenges", {})
 
+        # Lấy tên Conversation (VD: Conversation1 từ https://.../Conversation1.1481/listen-and-type)
+        conversation_name = conversation_url
+
         for challenge_id, challenge_data in challenges.items():
-            spoken_text = challenge_data['spoken_text']
-            output_filename = f"{conversation_url.replace('/', '').replace(':', '')}_{challenge_id}.mp3"
+            spoken_text = challenge_data.get('spoken_text', '').strip()
+            if not spoken_text:
+                continue  # Bỏ qua nếu không có text
+
+            # Đổi "Challenge #1" → "Challenge-1"
+            clean_challenge = challenge_id.replace('#', '').replace(' ', '-')
+
+            # Tạo tên file: Conversation1-Challenge-1.mp3
+            output_filename = f"{conversation_name}-{clean_challenge}.mp3"
             output_path = os.path.join(output_dir, output_filename)
 
             if not os.path.exists(output_path):
                 try:
                     engine.save_to_file(spoken_text, output_path)
                     engine.runAndWait()
-                    challenge_data["audio_path"] = output_path
                     print(f"Audio saved to: {output_path}")
                 except Exception as e:
                     print(f"Error generating audio for {challenge_id}: {e}")
+                    continue
             else:
                 print(f"Audio file already exists: {output_path}")
 
-    # Save the updated data with audio paths to the JSON file
-    with open(data_file, 'w') as f:
-        json.dump(data, f, indent=4)
+            # Cập nhật lại đường dẫn tương đối cho JSON
+            relative_path = os.path.relpath(output_path, start=base_dir).replace("\\", "/")
+            challenge_data["audio_path"] = relative_path
+
+    # Lưu lại file JSON với các audio_path đã cập nhật
+    with open(data_file, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 
-# Chạy chương trình chính để crawl, transcribe và lưu dữ liệu
 def main():
     base_url = "https://dailydictation.com/exercises/toeic"
     conversation_links = get_all_conversation_links(base_url)
@@ -150,7 +165,16 @@ def main():
     for link in conversation_links:
         print(f"Crawling: {link}")
         data = crawl_dailydictation(link)
-        all_data[link] = data
+
+        from urllib.parse import urlparse
+        path = urlparse(link).path.lstrip('/')
+        # Lấy conversation số
+        import re
+        match = re.search(r'conversation-(\d+)', path)
+        if match:
+            conv_number = match.group(1)
+            short_key = f"Conversation-{conv_number}"
+            all_data[short_key] = data
 
     # Lưu dữ liệu vào listen.json
     with open('../data/listen.json', 'w') as f:
@@ -158,6 +182,7 @@ def main():
 
     # Tạo âm thanh từ văn bản và cập nhật đường dẫn vào listen.json
     generate_audio_from_text('../data/listen.json', '../data/tts')
+
 
 if __name__ == "__main__":
     main()

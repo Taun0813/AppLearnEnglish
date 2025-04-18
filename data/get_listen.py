@@ -252,11 +252,11 @@ def main():
             all_data[short_key] = data
 
     # Lưu dữ liệu vào listen.json
-    with open('../data/listen.json', 'w') as f:
+    with open('listen.json', 'w') as f:
         json.dump(all_data, f, indent=4)
 
     # Tạo âm thanh từ văn bản và cập nhật đường dẫn vào listen.json
-    generate_audio_from_text('../data/listen.json', '../data/tts')
+    generate_audio_from_text('listen.json', '../data/tts')
 
 
 

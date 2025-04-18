@@ -1,0 +1,242 @@
+{
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk01.htm": {
+        "topic": "Greetings",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk0101.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "1. Greetings"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk02.htm": {
+        "topic": "Weather (1)",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk0201.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "2. Weather (1)"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk03.htm": {
+        "topic": "Weather (2)",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk0301.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "3. Weather (2)"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk04.htm": {
+        "topic": "Weather (3)",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk0401.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "4. Weather (3)"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk05.htm": {
+        "topic": "Calling a Friend",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk0501.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "5. Calling a Friend"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk06.htm": {
+        "topic": "Describing People",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk0601.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "6. Describing People"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk07.htm": {
+        "topic": "Expressing Concern for Someone",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk0701.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "7. Expressing Concern for Someone"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk08.htm": {
+        "topic": "Expressing Joy at Someone's Success",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk0801.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "8. Expressing Joy at Someone's Success"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk09.htm": {
+        "topic": "Complimenting Someone's Clothes",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk0901.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "9. Complimenting Someone's Clothes"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk10.htm": {
+        "topic": "Leisure Activities",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1001.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "10. Leisure Activities"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk11.htm": {
+        "topic": "Favorite Movie",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1101.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "11. Favorite Movie"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk12.htm": {
+        "topic": "Favorite Music",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1201.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "12. Favorite Music"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk13.htm": {
+        "topic": "Sports",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1301.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "13. Sports"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk14.htm": {
+        "topic": "Invitation to a Movie",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1401.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "14. Invitation to a Movie"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk15.htm": {
+        "topic": "A Sick Classmate",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1501.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "15. A Sick Classmate"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk16.htm": {
+        "topic": "Sharing News and Information",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1601.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "16. Sharing News and Information"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk17.htm": {
+        "topic": "Changing the Subject",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1701.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "17. Changing the Subject"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk18.htm": {
+        "topic": "Receiving Visitors",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1801.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "18. Receiving Visitors"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk19.htm": {
+        "topic": "Waiting for an Invitation",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk1901.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "19. Waiting for an Invitation"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk20.htm": {
+        "topic": "Accepting an Invitation to a Party",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk2001.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "20. Accepting an Invitation to a Party"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk21.htm": {
+        "topic": "Declining an Invitation to a Party (1)",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk2101.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "21. Declining an Invitation to a Party (1)"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk22.htm": {
+        "topic": "Declining an Invitation to a Party (2)",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk2201.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "22. Declining an Invitation to a Party (2)"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk23.htm": {
+        "topic": "Ending a Conversation",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk2301.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "23. Ending a Conversation"
+            }
+        ]
+    },
+    "https://www.eslfast.com/robot/topics/smalltalk/smalltalk24.htm": {
+        "topic": "Leave-Taking",
+        "audio_url": "https://www.eslfast.com/robot/audio/smalltalk/smalltalk2401.mp3",
+        "dialogue": [
+            {
+                "speaker": "A",
+                "text": "24. Leave-Taking"
+            }
+        ]
+    }
+}

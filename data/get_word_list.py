@@ -53,7 +53,7 @@ for i, table in enumerate(tables):
 # os.makedirs("data", exist_ok=True)
 
 # Lưu ra file vocab.json
-with open("../data/vocab.json", "w", encoding="utf-8") as f:
+with open("vocab.json", "w", encoding="utf-8") as f:
     json.dump(all_topics_data, f, ensure_ascii=False, indent=2)
 
 driver.quit()

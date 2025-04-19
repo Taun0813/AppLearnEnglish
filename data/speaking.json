@@ -5,7 +5,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "1. Greetings"
+                "text": "Hi, how are you doing?"
+            },
+            {
+                "speaker": "B",
+                "text": "I'm fine. How about yourself?"
+            },
+            {
+                "speaker": "A",
+                "text": "I'm pretty good. Thanks for asking."
+            },
+            {
+                "speaker": "B",
+                "text": "No problem. So how have you been?"
+            },
+            {
+                "speaker": "A",
+                "text": "I've been great. What about you?"
+            },
+            {
+                "speaker": "B",
+                "text": "I've been good. I'm in school right now."
+            },
+            {
+                "speaker": "A",
+                "text": "What school do you go to?"
+            },
+            {
+                "speaker": "B",
+                "text": "I go to PCC."
+            },
+            {
+                "speaker": "A",
+                "text": "Do you like it there?"
+            },
+            {
+                "speaker": "B",
+                "text": "It's okay. It's a really big campus."
+            },
+            {
+                "speaker": "A",
+                "text": "Good luck with school."
+            },
+            {
+                "speaker": "B",
+                "text": "Thank you very much."
             }
         ]
     },
@@ -15,7 +59,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "2. Weather (1)"
+                "text": "It's an ugly day today."
+            },
+            {
+                "speaker": "B",
+                "text": "I know. I think it may rain."
+            },
+            {
+                "speaker": "A",
+                "text": "It's the middle of summer, it shouldn't rain today."
+            },
+            {
+                "speaker": "B",
+                "text": "That would be weird."
+            },
+            {
+                "speaker": "A",
+                "text": "Yeah, especially since it's ninety degrees outside."
+            },
+            {
+                "speaker": "B",
+                "text": "I know, it would be horrible if it rained and it was hot outside."
+            },
+            {
+                "speaker": "A",
+                "text": "Yes, it would be."
+            },
+            {
+                "speaker": "B",
+                "text": "I really wish it wasn't so hot every day."
+            },
+            {
+                "speaker": "A",
+                "text": "Me too. I can't wait until winter."
+            },
+            {
+                "speaker": "B",
+                "text": "I like winter too, but sometimes it gets too cold."
+            },
+            {
+                "speaker": "A",
+                "text": "I'd rather be cold than hot."
+            },
+            {
+                "speaker": "B",
+                "text": "Me too."
             }
         ]
     },
@@ -25,7 +113,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "3. Weather (2)"
+                "text": "It's such a nice day."
+            },
+            {
+                "speaker": "B",
+                "text": "Yes, it is."
+            },
+            {
+                "speaker": "A",
+                "text": "It looks like it may rain soon."
+            },
+            {
+                "speaker": "B",
+                "text": "Yes, and I hope that it does."
+            },
+            {
+                "speaker": "A",
+                "text": "Why is that?"
+            },
+            {
+                "speaker": "B",
+                "text": "I really love how rain clears the air."
+            },
+            {
+                "speaker": "A",
+                "text": "Me too. It always smells so fresh after it rains."
+            },
+            {
+                "speaker": "B",
+                "text": "Yes, but I love the night air after it rains."
+            },
+            {
+                "speaker": "A",
+                "text": "Really? Why is it?"
+            },
+            {
+                "speaker": "B",
+                "text": "Because you can see the stars perfectly."
+            },
+            {
+                "speaker": "A",
+                "text": "I really hope it rains today."
+            },
+            {
+                "speaker": "B",
+                "text": "Yeah, me too."
             }
         ]
     },
@@ -35,7 +167,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "4. Weather (3)"
+                "text": "I really want to go to the beach this weekend."
+            },
+            {
+                "speaker": "B",
+                "text": "That sounds like fun. What's the weather going to be like?"
+            },
+            {
+                "speaker": "A",
+                "text": "I heard that it's going to be warm this weekend."
+            },
+            {
+                "speaker": "B",
+                "text": "Is it going to be perfect beach weather?"
+            },
+            {
+                "speaker": "A",
+                "text": "I believe so."
+            },
+            {
+                "speaker": "B",
+                "text": "Good. I hope it doesn't cool off this weekend."
+            },
+            {
+                "speaker": "A",
+                "text": "I know. I really want to go to the beach."
+            },
+            {
+                "speaker": "B",
+                "text": "But you know that California weather is really unpredictable."
+            },
+            {
+                "speaker": "A",
+                "text": "You're right. One minute it's hot, and then the next minute it's cold."
+            },
+            {
+                "speaker": "B",
+                "text": "I really wish the weather would just stay the same."
+            },
+            {
+                "speaker": "A",
+                "text": "I do too. That way we can have our activities planned ahead of time."
+            },
+            {
+                "speaker": "B",
+                "text": "Yeah, that would make things a lot easier."
             }
         ]
     },
@@ -45,7 +221,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "5. Calling a Friend"
+                "text": "Hello, may I speak to Alice please?"
+            },
+            {
+                "speaker": "B",
+                "text": "This is she. How's it going?"
+            },
+            {
+                "speaker": "A",
+                "text": "I've been trying to call you all day."
+            },
+            {
+                "speaker": "B",
+                "text": "Sorry about that. I was cleaning up."
+            },
+            {
+                "speaker": "A",
+                "text": "It's okay."
+            },
+            {
+                "speaker": "B",
+                "text": "So what were you calling me about?"
+            },
+            {
+                "speaker": "A",
+                "text": "Oh, I just wanted to see if you wanted to hang out tomorrow."
+            },
+            {
+                "speaker": "B",
+                "text": "Sure, what did you want to do?"
+            },
+            {
+                "speaker": "A",
+                "text": "Maybe we can go see a movie or something."
+            },
+            {
+                "speaker": "B",
+                "text": "That sounds like fun. Let's do it."
+            },
+            {
+                "speaker": "A",
+                "text": "I'll see you tomorrow then."
+            },
+            {
+                "speaker": "B",
+                "text": "See you then. Goodbye."
             }
         ]
     },
@@ -55,7 +275,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "6. Describing People"
+                "text": "Have you seen the new girl in school?"
+            },
+            {
+                "speaker": "B",
+                "text": "No, I haven't."
+            },
+            {
+                "speaker": "A",
+                "text": "She's really pretty."
+            },
+            {
+                "speaker": "B",
+                "text": "Describe her to me."
+            },
+            {
+                "speaker": "A",
+                "text": "She's not too tall."
+            },
+            {
+                "speaker": "B",
+                "text": "Well, how tall is she?"
+            },
+            {
+                "speaker": "A",
+                "text": "She's about five feet even."
+            },
+            {
+                "speaker": "B",
+                "text": "What does she look like, though?"
+            },
+            {
+                "speaker": "A",
+                "text": "She has pretty light brown eyes."
+            },
+            {
+                "speaker": "B",
+                "text": "I may know which girl you're talking about."
+            },
+            {
+                "speaker": "A",
+                "text": "So you have seen her around?"
+            },
+            {
+                "speaker": "B",
+                "text": "Yes, I have."
             }
         ]
     },
@@ -65,7 +329,43 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "7. Expressing Concern for Someone"
+                "text": "Why weren't you at school yesterday?"
+            },
+            {
+                "speaker": "B",
+                "text": "I wasn't really feeling well."
+            },
+            {
+                "speaker": "A",
+                "text": "What was wrong with you?"
+            },
+            {
+                "speaker": "B",
+                "text": "My stomach was upset."
+            },
+            {
+                "speaker": "A",
+                "text": "Do you feel better now?"
+            },
+            {
+                "speaker": "B",
+                "text": "I don't really feel too well yet."
+            },
+            {
+                "speaker": "A",
+                "text": "Do you want anything to make you feel better?"
+            },
+            {
+                "speaker": "B",
+                "text": "No, thanks. I already took some medicine."
+            },
+            {
+                "speaker": "A",
+                "text": "I hope you feel better."
+            },
+            {
+                "speaker": "B",
+                "text": "Thank you."
             }
         ]
     },
@@ -75,7 +375,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "8. Expressing Joy at Someone's Success"
+                "text": "Did you hear the good news?"
+            },
+            {
+                "speaker": "B",
+                "text": "No, I haven't."
+            },
+            {
+                "speaker": "A",
+                "text": "I got a promotion at my job."
+            },
+            {
+                "speaker": "B",
+                "text": "Did you really?"
+            },
+            {
+                "speaker": "A",
+                "text": "Seriously, I am so excited."
+            },
+            {
+                "speaker": "B",
+                "text": "Well, congratulations."
+            },
+            {
+                "speaker": "A",
+                "text": "Thank you."
+            },
+            {
+                "speaker": "B",
+                "text": "I'm so happy for you."
+            },
+            {
+                "speaker": "A",
+                "text": "Really?"
+            },
+            {
+                "speaker": "B",
+                "text": "Yes. You really deserved this."
+            },
+            {
+                "speaker": "A",
+                "text": "You think so?"
+            },
+            {
+                "speaker": "B",
+                "text": "Yes. Good for you."
             }
         ]
     },
@@ -85,7 +429,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "9. Complimenting Someone's Clothes"
+                "text": "You look really nice today."
+            },
+            {
+                "speaker": "B",
+                "text": "Thank you. I just got this outfit the other day."
+            },
+            {
+                "speaker": "A",
+                "text": "Really, where did you get it?"
+            },
+            {
+                "speaker": "B",
+                "text": "I got it from Macy's."
+            },
+            {
+                "speaker": "A",
+                "text": "It's really nice."
+            },
+            {
+                "speaker": "B",
+                "text": "Thanks again. You look nice today, too."
+            },
+            {
+                "speaker": "A",
+                "text": "Thank you. I just got these shoes today."
+            },
+            {
+                "speaker": "B",
+                "text": "Really? What kind of shoes are they?"
+            },
+            {
+                "speaker": "A",
+                "text": "These are called All Star Chuck Taylors."
+            },
+            {
+                "speaker": "B",
+                "text": "I really like those. How much did they cost?"
+            },
+            {
+                "speaker": "A",
+                "text": "They were about forty dollars."
+            },
+            {
+                "speaker": "B",
+                "text": "I think I'm going to go buy myself a pair."
             }
         ]
     },
@@ -95,7 +483,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "10. Leisure Activities"
+                "text": "Tell me, what do you enjoy doing in your spare time?"
+            },
+            {
+                "speaker": "B",
+                "text": "I enjoy drawing and painting."
+            },
+            {
+                "speaker": "A",
+                "text": "You know how to draw and paint?"
+            },
+            {
+                "speaker": "B",
+                "text": "Yes, I do."
+            },
+            {
+                "speaker": "A",
+                "text": "When did you learn how to do that?"
+            },
+            {
+                "speaker": "B",
+                "text": "I learned back in high school."
+            },
+            {
+                "speaker": "A",
+                "text": "Oh, so you took an art class?"
+            },
+            {
+                "speaker": "B",
+                "text": "Yeah, I loved that class."
+            },
+            {
+                "speaker": "A",
+                "text": "I see that you're pretty talented."
+            },
+            {
+                "speaker": "B",
+                "text": "Thank you very much."
+            },
+            {
+                "speaker": "A",
+                "text": "I wish I had a talent like that."
+            },
+            {
+                "speaker": "B",
+                "text": "I'm sure you have a talent. It's just hidden."
             }
         ]
     },
@@ -105,7 +537,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "11. Favorite Movie"
+                "text": "What's your favorite movie?"
+            },
+            {
+                "speaker": "B",
+                "text": "My favorite movie is Superbad."
+            },
+            {
+                "speaker": "A",
+                "text": "Oh, why is that?"
+            },
+            {
+                "speaker": "B",
+                "text": "It's the funniest movie that I've ever seen."
+            },
+            {
+                "speaker": "A",
+                "text": "That's true. It is a very funny movie."
+            },
+            {
+                "speaker": "B",
+                "text": "You've seen it before?"
+            },
+            {
+                "speaker": "A",
+                "text": "Yes, I saw that movie the first day it came out in theaters."
+            },
+            {
+                "speaker": "B",
+                "text": "Didn't you laugh through the whole movie? I did."
+            },
+            {
+                "speaker": "A",
+                "text": "Me too. That movie brought tears to my eyes."
+            },
+            {
+                "speaker": "B",
+                "text": "Mine too."
+            },
+            {
+                "speaker": "A",
+                "text": "I have it on DVD at my house if you want to come over and watch it."
+            },
+            {
+                "speaker": "B",
+                "text": "Sure, let's go."
             }
         ]
     },
@@ -115,7 +591,35 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "12. Favorite Music"
+                "text": "What type of music do you like to listen to?"
+            },
+            {
+                "speaker": "B",
+                "text": "I like listening to different kinds of music."
+            },
+            {
+                "speaker": "A",
+                "text": "Like what, for instance?"
+            },
+            {
+                "speaker": "B",
+                "text": "I enjoy Rock and R&B."
+            },
+            {
+                "speaker": "A",
+                "text": "Why is that?"
+            },
+            {
+                "speaker": "B",
+                "text": "I like the different instruments that they use."
+            },
+            {
+                "speaker": "A",
+                "text": "That's a good reason to like something."
+            },
+            {
+                "speaker": "B",
+                "text": "Yeah, I think so too."
             }
         ]
     },
@@ -125,7 +629,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "13. Sports"
+                "text": "Did you go to the basketball game on Friday?"
+            },
+            {
+                "speaker": "B",
+                "text": "No, I couldn't make it."
+            },
+            {
+                "speaker": "A",
+                "text": "You missed a really good game."
+            },
+            {
+                "speaker": "B",
+                "text": "Oh, really? Who won?"
+            },
+            {
+                "speaker": "A",
+                "text": "Our school did. They played really well."
+            },
+            {
+                "speaker": "B",
+                "text": "Too bad I was busy. I really wanted to go."
+            },
+            {
+                "speaker": "A",
+                "text": "Yeah, you should have. It was really exciting."
+            },
+            {
+                "speaker": "B",
+                "text": "So what was the score?"
+            },
+            {
+                "speaker": "A",
+                "text": "The score was 101-98."
+            },
+            {
+                "speaker": "B",
+                "text": "Man, that was a really close game."
+            },
+            {
+                "speaker": "A",
+                "text": "That's what made it so great."
+            },
+            {
+                "speaker": "B",
+                "text": "I'll make sure and make it to the next one."
             }
         ]
     },
@@ -135,7 +683,43 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "14. Invitation to a Movie"
+                "text": "What are you doing this weekend?"
+            },
+            {
+                "speaker": "B",
+                "text": "I'm going to the movies with a friend. How about you?"
+            },
+            {
+                "speaker": "A",
+                "text": "I'm not sure yet."
+            },
+            {
+                "speaker": "B",
+                "text": "Well, did you want to go see a movie with me?"
+            },
+            {
+                "speaker": "A",
+                "text": "What movie are you going to see?"
+            },
+            {
+                "speaker": "B",
+                "text": "I'm not sure yet. Is there something you want to see?"
+            },
+            {
+                "speaker": "A",
+                "text": "There's nothing I can think of."
+            },
+            {
+                "speaker": "B",
+                "text": "So, did you want to go?"
+            },
+            {
+                "speaker": "A",
+                "text": "No, thanks, maybe another time."
+            },
+            {
+                "speaker": "B",
+                "text": "Okay, sounds good."
             }
         ]
     },
@@ -145,7 +729,35 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "15. A Sick Classmate"
+                "text": "Did you go to school today?"
+            },
+            {
+                "speaker": "B",
+                "text": "Yeah, I went to school today. Were you there?"
+            },
+            {
+                "speaker": "A",
+                "text": "No, I didn't go, I've been sick."
+            },
+            {
+                "speaker": "B",
+                "text": "That sucks. Did you want the assignments from English class?"
+            },
+            {
+                "speaker": "A",
+                "text": "That would be nice, thank you."
+            },
+            {
+                "speaker": "B",
+                "text": "No problem, you're welcome."
+            },
+            {
+                "speaker": "A",
+                "text": "I will be glad to do the same for you when you're sick."
+            },
+            {
+                "speaker": "B",
+                "text": "Well, thank you. I hope to see you at school tomorrow."
             }
         ]
     },
@@ -155,7 +767,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "16. Sharing News and Information"
+                "text": "Did you hear the news?"
+            },
+            {
+                "speaker": "B",
+                "text": "What happened?"
+            },
+            {
+                "speaker": "A",
+                "text": "Our cousin went into labor and had her baby last week."
+            },
+            {
+                "speaker": "B",
+                "text": "She did? Why didn't anyone tell me?"
+            },
+            {
+                "speaker": "A",
+                "text": "I would've thought that somebody would have told you."
+            },
+            {
+                "speaker": "B",
+                "text": "No, I had no idea."
+            },
+            {
+                "speaker": "A",
+                "text": "Well, she did, her baby was 8 pounds 6 ounces."
+            },
+            {
+                "speaker": "B",
+                "text": "Oh my God, that's great!"
+            },
+            {
+                "speaker": "A",
+                "text": "Are you going to go and visit her and the baby?"
+            },
+            {
+                "speaker": "B",
+                "text": "I think that I might."
+            },
+            {
+                "speaker": "A",
+                "text": "Good! I just thought I'd let you know."
+            },
+            {
+                "speaker": "B",
+                "text": "Thanks for telling me."
             }
         ]
     },
@@ -165,7 +821,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "17. Changing the Subject"
+                "text": "Did you go to school today?"
+            },
+            {
+                "speaker": "B",
+                "text": "Of course. Did you?"
+            },
+            {
+                "speaker": "A",
+                "text": "I didn't want to, so I didn't."
+            },
+            {
+                "speaker": "B",
+                "text": "That's sad, but have you gone to the movies recently?"
+            },
+            {
+                "speaker": "A",
+                "text": "That's a switch."
+            },
+            {
+                "speaker": "B",
+                "text": "I'm serious, have you?"
+            },
+            {
+                "speaker": "A",
+                "text": "No, I haven't. Why?"
+            },
+            {
+                "speaker": "B",
+                "text": "I really want to go to the movies this weekend."
+            },
+            {
+                "speaker": "A",
+                "text": "So go then."
+            },
+            {
+                "speaker": "B",
+                "text": "I really don't want to go by myself."
+            },
+            {
+                "speaker": "A",
+                "text": "Well anyway, do you plan on going to school tomorrow?"
+            },
+            {
+                "speaker": "B",
+                "text": "No, I think I'm going to go to the movies."
             }
         ]
     },
@@ -175,7 +875,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "18. Receiving Visitors"
+                "text": "Thanks for coming to see me today."
+            },
+            {
+                "speaker": "B",
+                "text": "It's no problem. I was really missing you anyway."
+            },
+            {
+                "speaker": "A",
+                "text": "I missed you too."
+            },
+            {
+                "speaker": "B",
+                "text": "Why haven't you tried to come see me then?"
+            },
+            {
+                "speaker": "A",
+                "text": "I've been really busy."
+            },
+            {
+                "speaker": "B",
+                "text": "Doing what?"
+            },
+            {
+                "speaker": "A",
+                "text": "Working."
+            },
+            {
+                "speaker": "B",
+                "text": "I would've come to see you sooner, but I've been busy too."
+            },
+            {
+                "speaker": "A",
+                "text": "What have you been doing?"
+            },
+            {
+                "speaker": "B",
+                "text": "I've been working too."
+            },
+            {
+                "speaker": "A",
+                "text": "Well regardless, I'm very happy that you came to see me."
+            },
+            {
+                "speaker": "B",
+                "text": "I am too."
             }
         ]
     },
@@ -185,7 +929,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "19. Waiting for an Invitation"
+                "text": "Hey, did you hear about Jessica's party this weekend?"
+            },
+            {
+                "speaker": "B",
+                "text": "Yeah, but I'm still waiting for my invitation."
+            },
+            {
+                "speaker": "A",
+                "text": "Oh really? She gave me mine earlier today."
+            },
+            {
+                "speaker": "B",
+                "text": "Well, she'll probably just give me my invitation later on today."
+            },
+            {
+                "speaker": "A",
+                "text": "Yeah, so are you planning on going?"
+            },
+            {
+                "speaker": "B",
+                "text": "I think so. It sounds like it's going to be a lot of fun."
+            },
+            {
+                "speaker": "A",
+                "text": "It really does, I can't wait."
+            },
+            {
+                "speaker": "B",
+                "text": "What time does the party start?"
+            },
+            {
+                "speaker": "A",
+                "text": "It starts at 8 o'clock."
+            },
+            {
+                "speaker": "B",
+                "text": "Oh, well, how many people has she given invites to so far?"
+            },
+            {
+                "speaker": "A",
+                "text": "I'm not sure, but I don't think she's given out that many."
+            },
+            {
+                "speaker": "B",
+                "text": "Well, hopefully she'll give me my invite later on today."
             }
         ]
     },
@@ -195,7 +983,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "20. Accepting an Invitation to a Party"
+                "text": "Hey, what's up?"
+            },
+            {
+                "speaker": "B",
+                "text": "Nothing really."
+            },
+            {
+                "speaker": "A",
+                "text": "I'm throwing a party on Friday."
+            },
+            {
+                "speaker": "B",
+                "text": "I didn't realize that."
+            },
+            {
+                "speaker": "A",
+                "text": "You didn't?"
+            },
+            {
+                "speaker": "B",
+                "text": "Nobody has told me anything about your party."
+            },
+            {
+                "speaker": "A",
+                "text": "Did you want to go?"
+            },
+            {
+                "speaker": "B",
+                "text": "When does it start?"
+            },
+            {
+                "speaker": "A",
+                "text": "At 8:00 p.m."
+            },
+            {
+                "speaker": "B",
+                "text": "I'll be there."
+            },
+            {
+                "speaker": "A",
+                "text": "I'd better see you there."
+            },
+            {
+                "speaker": "B",
+                "text": "Of course."
             }
         ]
     },
@@ -205,7 +1037,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "21. Declining an Invitation to a Party (1)"
+                "text": "What's going on?"
+            },
+            {
+                "speaker": "B",
+                "text": "Nothing really, you?"
+            },
+            {
+                "speaker": "A",
+                "text": "I'm throwing a party next Saturday."
+            },
+            {
+                "speaker": "B",
+                "text": "Is that right?"
+            },
+            {
+                "speaker": "A",
+                "text": "Yeah, are you going to come?"
+            },
+            {
+                "speaker": "B",
+                "text": "I'm sorry, I can't."
+            },
+            {
+                "speaker": "A",
+                "text": "Why not?"
+            },
+            {
+                "speaker": "B",
+                "text": "I don't really want to."
+            },
+            {
+                "speaker": "A",
+                "text": "Well, why don't you?"
+            },
+            {
+                "speaker": "B",
+                "text": "I hate going to parties."
+            },
+            {
+                "speaker": "A",
+                "text": "Well, that's okay."
+            },
+            {
+                "speaker": "B",
+                "text": "Yeah, sorry."
             }
         ]
     },
@@ -215,7 +1091,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "22. Declining an Invitation to a Party (2)"
+                "text": "What's up?"
+            },
+            {
+                "speaker": "B",
+                "text": "Nothing much, what's going on?"
+            },
+            {
+                "speaker": "A",
+                "text": "I'm having a party this Friday."
+            },
+            {
+                "speaker": "B",
+                "text": "Oh, really? That's nice."
+            },
+            {
+                "speaker": "A",
+                "text": "I wanted to see if you wanted to come."
+            },
+            {
+                "speaker": "B",
+                "text": "This Friday? Sorry, I already have plans."
+            },
+            {
+                "speaker": "A",
+                "text": "Doing what?"
+            },
+            {
+                "speaker": "B",
+                "text": "I'm going to dinner with my family."
+            },
+            {
+                "speaker": "A",
+                "text": "I really wanted you to come, but I understand."
+            },
+            {
+                "speaker": "B",
+                "text": "Yeah, maybe next time."
+            },
+            {
+                "speaker": "A",
+                "text": "I'll hold you to that."
+            },
+            {
+                "speaker": "B",
+                "text": "Sounds like a plan."
             }
         ]
     },
@@ -225,7 +1145,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "23. Ending a Conversation"
+                "text": "It was nice talking to you."
+            },
+            {
+                "speaker": "B",
+                "text": "Why are you trying to rush me off the phone?"
+            },
+            {
+                "speaker": "A",
+                "text": "I really have to go."
+            },
+            {
+                "speaker": "B",
+                "text": "Why? I still wanted to talk to you."
+            },
+            {
+                "speaker": "A",
+                "text": "I have things to do."
+            },
+            {
+                "speaker": "B",
+                "text": "Like what?"
+            },
+            {
+                "speaker": "A",
+                "text": "Don't be nosey."
+            },
+            {
+                "speaker": "B",
+                "text": "I'm not. I just want to know."
+            },
+            {
+                "speaker": "A",
+                "text": "Well, it's really none of your business."
+            },
+            {
+                "speaker": "B",
+                "text": "That's harsh."
+            },
+            {
+                "speaker": "A",
+                "text": "I'm sorry, but I have to go."
+            },
+            {
+                "speaker": "B",
+                "text": "Fine."
             }
         ]
     },
@@ -235,7 +1199,51 @@
         "dialogue": [
             {
                 "speaker": "A",
-                "text": "24. Leave-Taking"
+                "text": "Well, it was nice talking to you."
+            },
+            {
+                "speaker": "B",
+                "text": "It was nice talking to you too."
+            },
+            {
+                "speaker": "A",
+                "text": "We should really hang out again."
+            },
+            {
+                "speaker": "B",
+                "text": "That would be fun."
+            },
+            {
+                "speaker": "A",
+                "text": "Where do you want to go?"
+            },
+            {
+                "speaker": "B",
+                "text": "I think we should go out to eat."
+            },
+            {
+                "speaker": "A",
+                "text": "That sounds good."
+            },
+            {
+                "speaker": "B",
+                "text": "All right, so I'll see you then."
+            },
+            {
+                "speaker": "A",
+                "text": "I'll call you later."
+            },
+            {
+                "speaker": "B",
+                "text": "Okay, I'll talk to you later then."
+            },
+            {
+                "speaker": "A",
+                "text": "See you later."
+            },
+            {
+                "speaker": "B",
+                "text": "Bye."
             }
         ]
     }

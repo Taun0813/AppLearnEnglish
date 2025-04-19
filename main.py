@@ -4,6 +4,7 @@ from gui.main_window import MainWindow
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setApplicationName("Super English")
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())

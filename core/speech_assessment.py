@@ -1,4 +1,6 @@
 import speech_recognition as sr
+import whisper
+import numpy as np
 
 class SpeechAssessment:
     def assess_pronunciation(self, audio_data, text_reference):
@@ -13,26 +15,45 @@ class SpeechAssessment:
         except sr.RequestError as e:
             return {'score': 0.0, 'feedback': f"Speech recognition service error: {e}"}
 
+# Load the model
+model = whisper.load_model("base")
+
 def evaluate(audio_path, reference_text):
-    import whisper
-    import difflib
+    """
+    Evaluate the speech of a user in an audio file.
 
-    model = whisper.load_model("base")
+    Args:
+      audio_path: The path of the user audio
+      reference_text: the reference text
+
+    Returns:
+      result: The score and feedback of the user
+    """
+
+    print(f'evaluate - start')
+
     result = model.transcribe(audio_path)
-    user_text = result["text"].strip()
 
-    # Đơn giản: tính độ giống nhau
-    ratio = difflib.SequenceMatcher(None, reference_text.lower(), user_text.lower()).ratio()
-    score = round(ratio * 100, 2)
+    # get the text
+    user_text = result["text"]
 
-    feedback = "Tốt!" if score >= 80 else "Cần luyện thêm!"
+    # score calculation (this is an example, you can improve this part)
+    score = len(user_text.split()) / len(reference_text.split())
+
+    if score > 1:
+      score = 1
+    if score < 0:
+      score = 0
+
+    print(f'evaluate - end')
+    # feedback generation
+    feedback = 'Your score is : ' + str(score) + ' user text is : '+ user_text
 
     return {
         "score": score,
         "feedback": feedback,
-        "user_text": user_text
+        "user_text": user_text,
     }
-
 
 
 

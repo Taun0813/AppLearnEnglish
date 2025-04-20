@@ -1,4 +1,5 @@
 import openai
+from googletrans import Translator
 
 class AIConversation:
     def __init__(self):
@@ -29,3 +30,11 @@ class AIConversation:
 
         except Exception as e:
             yield f"[Error]: {str(e)}"
+
+
+
+#
+# translator = Translator()
+# result = translator.translate("can you help me?", dest='vi')
+# print(result.text)  # -> "Xin chào, bạn khỏe không?"
+
